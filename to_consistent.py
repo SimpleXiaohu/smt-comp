@@ -24,16 +24,16 @@ Target solver: Ostrich
 |)
 (set-info :license "https://creativecommons.org/licenses/by/4.0/")
 (set-info :category "industrial")
-(set-info :status "unknown")
+(set-info :status unknown)
         """
       f.write(header)
       for line in lines:
-        if not ("set-info" in line and "set-logic" in line):
+        if not ("set-info" in line and "set-logic" in line and "exit" in line):
             f.write(line)
+      f.write("(exit)")
         
 def to_consistent_dir(dirname:str):
     for filename in glob.glob(dirname + "/**/*.smt2", recursive=True):
-        print(filename)
         to_consistent_file(filename)
 
 # parse arguments
