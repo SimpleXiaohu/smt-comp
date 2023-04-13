@@ -50,3 +50,4 @@ parser.add_argument("inputdir")
 if __name__ == "__main__":
     args = parser.parse_args()
     to_consistent_dir(args.inputdir)
+
