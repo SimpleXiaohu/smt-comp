@@ -32,7 +32,7 @@ Target solver: Ostrich, Z3str3, CVC5
         """
       f.write(header)
       for line in lines:
-        if not ("set-info" in line and "set-logic" in line and "exit" in line):
+        if not ("set-info" in line or "set-logic" in line or "exit" in line):
             f.write(line)
       f.write("(exit)")
         
